@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  /* KhemoConnect branding: vibrant orange from logo + navy/black + subtle grey */
+  --kc-navy: #0f172a;
+  --kc-slate: #334155;
+  --kc-orange: #FF6B35;
+  --kc-orange-dark: #E85D04;
+  --kc-light: #f8fafc;
+  --kc-border: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  font-family: var(--font-geist-sans);
+}
+
+/* GEO-friendly + clean marketing styles */
+.kc-container {
+  @apply max-w-6xl mx-auto px-6;
+}
+
+.kc-section {
+  @apply py-16 md:py-20;
+}
+
+.kc-card {
+  @apply bg-white border border-[var(--kc-border)] rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow;
+}
+
+.kc-btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-[var(--kc-orange)] px-6 py-3 text-white font-medium hover:bg-[var(--kc-orange-dark)] transition-colors;
+}
+
+.kc-btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-[var(--kc-orange)] px-6 py-3 font-medium hover:bg-[var(--kc-orange)] hover:text-white transition-colors;
+}
+
+.kc-heading {
+  @apply text-4xl md:text-5xl font-semibold tracking-tighter text-[var(--kc-navy)];
+}
+
+.kc-subhead {
+  @apply text-xl md:text-2xl text-[var(--kc-slate)] max-w-3xl;
+}
+
+/* Demo styles */
+.demo-panel {
+  @apply border border-[var(--kc-border)] rounded-2xl bg-[var(--kc-light)] p-6;
+}
+
+.step {
+  @apply flex gap-4 p-4 rounded-xl border bg-white;
+}
+
+.persona-btn {
+  @apply px-4 py-2 rounded-full border text-sm font-medium transition-all;
+}
+
+.persona-btn.active {
+  @apply bg-[var(--kc-orange)] text-white border-[var(--kc-orange)];
+}
