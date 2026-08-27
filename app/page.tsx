@@ -347,7 +347,7 @@ export default function KhemoConnect2026() {
       <footer className="mt-auto bg-[#1a1a1a] py-10 text-xs text-slate-400">
         <div className="kc-container flex flex-col md:flex-row justify-between gap-y-4 items-center">
           <div className="flex items-center gap-2">
-            <img src="/logo-horizontal-dark.png" alt="KhemoConnect" className="h-10 w-auto md:h-11" />
+            <img src="/logo-horizontal-dark-on-charcoal.png" alt="KhemoConnect" className="h-10 w-auto md:h-11" />
             <span>© {new Date().getFullYear()} KhemoConnect. Gauteng, South Africa.</span>
           </div>
           <div className="flex gap-6">
