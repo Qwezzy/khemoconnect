@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { ArrowRight, Check, Zap, Target, Bot, Server } from "lucide-react";
 import { PersonalizationDemo } from "../components/PersonalizationDemo";
 import { AutomationPipelineDemo } from "../components/AutomationPipelineDemo";
@@ -13,101 +13,98 @@ export default function KhemoConnect2026() {
     <div className="min-h-screen bg-white text-[#111] font-sans">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--kc-border)]">
-        <div className="kc-container flex h-20 items-center justify-between">
-          <a href="/" className="flex items-center">
-            <img 
-              src="/New_KhemoConnect_Logo.png" 
-              alt="KhemoConnect" 
-              className="h-12 w-auto" 
-            />
+        <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-6 md:px-10">
+          <a href="/" className="text-[20px] font-bold tracking-tight text-[var(--kc-navy)]">
+            <span className="text-[var(--kc-orange)]">Khemo</span>Connect
           </a>
-          
-          <div className="flex items-center gap-8 text-sm font-medium">
+          <div className="hidden items-center gap-7 text-sm font-medium text-[var(--kc-slate)] md:flex">
             <a href="#capabilities" className="hover:text-[var(--kc-orange)] transition">Capabilities</a>
             <a href="#demo" className="hover:text-[var(--kc-orange)] transition">See it live</a>
             <a href="#packages" className="hover:text-[var(--kc-orange)] transition">Packages</a>
-            <a href="#ai-mzansi" className="hover:text-[var(--kc-orange)] transition font-medium">Ai Mzansi</a>
-            <a href="#geo" className="hover:text-[var(--kc-orange)] transition">GEO</a>
-            <a 
-              href="#cta" 
-              className="kc-btn-primary text-sm px-5 py-2"
+            <a href="#ai-mzansi" className="hover:text-[var(--kc-orange)] transition">Ai Mzansi</a>
+            <a
+              href="https://www.khemo.co.za/contact"
+              className="inline-flex items-center rounded-[10px] bg-[var(--kc-orange)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--kc-orange-dark)] transition-colors"
             >
               Claim Free Audit
             </a>
           </div>
+          <a
+            href="https://www.khemo.co.za/contact"
+            className="inline-flex items-center rounded-[10px] bg-[var(--kc-orange)] px-3 py-2 text-sm font-medium text-white md:hidden"
+          >
+            Claim Free Audit
+          </a>
         </div>
       </nav>
 
-      {/* HERO - Prime real estate with irresistible offer (Hormozi style) */}
-      <header className="relative kc-container pt-12 pb-16 md:pt-16 md:pb-20 text-center overflow-hidden">
-        {/* AI Agency visual background */}
-        <div className="absolute inset-0 -z-10">
-          <img 
-            src="/images/hero-ai.jpg" 
-            alt="" 
-            className="w-full h-full object-cover opacity-10" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/98 to-white"></div>
-        </div>
-
-        <a 
-          href="https://www.khemo.co.za/" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full bg-[var(--kc-light)] px-4 py-1 text-sm font-medium tracking-widest text-[var(--kc-orange)] mb-4 hover:bg-[var(--kc-border)] transition-colors"
-        >
-          Est. 2008 • A Division of Khemo IT Solutions
-        </a>
-
-        {/* Call to Action image replacing the second logo */}
-        <a href="#cta" className="block mx-auto w-full max-w-[520px] mb-6">
-          <img 
-            src="/images/hero-cta.jpg" 
-            alt="Free GEO + AI Audit - Call to Action" 
-            className="w-full rounded-2xl shadow-xl hover:scale-[1.01] transition-transform" 
-          />
-        </a>
-        
-        <h1 className="kc-heading max-w-5xl mx-auto mb-4 text-4xl md:text-5xl leading-tight">
-          Get your business <span className="text-[var(--kc-orange)]">cited by ChatGPT, Perplexity &amp; Google AI</span><br />
-          , while your leads get qualified and followed up automatically
-        </h1>
-        
-        <p className="text-xl md:text-2xl text-[var(--kc-slate)] max-w-3xl mx-auto mb-8">
-          GEO-optimized AI websites + Day-One automation pipelines.<br />
-          Built on our own scalable hosting. For ambitious South African SMEs and startups.
-        </p>
-
-        {/* Irresistible Offer CTA */}
-        <div className="max-w-xl mx-auto mb-6">
-          <div className="bg-white border border-[var(--kc-orange)] rounded-2xl p-5 mb-6 text-left shadow-sm">
-            <div className="font-semibold text-[var(--kc-orange)] mb-1">FREE OFFER (R12,500 value)</div>
-            <div className="text-lg mb-2">45-minute GEO + AI Website Audit + Custom Roadmap</div>
-            <div className="text-sm text-[var(--kc-slate)]">We'll show you exactly why you're missing from AI recommendations and how to fix it fast. <span className="font-medium">If we can't improve your AI visibility plan, the call is on us.</span></div>
+      {/* HERO */}
+      <header className="relative overflow-hidden bg-white">
+        <div className="mx-auto grid max-w-[1180px] items-center gap-12 px-6 py-10 md:px-10 md:py-12 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <div className="mb-4 inline-flex rounded-full bg-[var(--kc-light)] px-3 py-[7px] text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--kc-orange)]">
+              Est. 2008 · Gauteng
+            </div>
+            <h1 className="mb-3.5 max-w-[620px] text-[40px] font-semibold leading-[1.06] tracking-tight text-[var(--kc-navy)] md:text-[48px]">
+              Be the business <span className="text-[var(--kc-orange)]">AI recommends.</span>
+            </h1>
+            <p className="mb-[22px] max-w-[540px] text-[17px] leading-relaxed text-[var(--kc-slate)]">
+              GEO-optimized sites and Day-One automation for ambitious South African SMEs. Built on our own stack, from hosting to follow-up.
+            </p>
+            <div className="flex flex-wrap gap-2.5">
+              <a
+                href="https://www.khemo.co.za/contact"
+                className="inline-flex items-center gap-2 rounded-[10px] bg-[var(--kc-orange)] px-[22px] py-3.5 text-base font-medium text-white hover:bg-[var(--kc-orange-dark)] transition-colors"
+              >
+                Claim my free audit <ArrowRight size={18} />
+              </a>
+              <a
+                href="#packages"
+                className="inline-flex items-center rounded-[10px] border border-[var(--kc-border)] bg-white px-5 py-3.5 text-base font-medium text-[var(--kc-navy)] hover:bg-[var(--kc-light)] transition-colors"
+              >
+                See packages from R28k
+              </a>
+            </div>
+            <p className="mt-3 text-[13px] text-[var(--kc-slate)]">
+              45-minute GEO + AI audit · R12,500 value · no obligation
+            </p>
           </div>
-        </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-          <a href="#cta" className="kc-btn-primary text-base px-10 py-4 text-lg group">
-            Claim My Free Audit <ArrowRight className="ml-2 group-hover:translate-x-0.5 transition" size={20} />
-          </a>
-          <a href="#packages" className="kc-btn-secondary text-base px-8 py-4 text-lg">
-            See Packages &amp; Starting Prices
-          </a>
-        </div>
-
-        <div className="text-xs text-[var(--kc-slate)]">
-          No obligation. 30+ Gauteng businesses audited this quarter.
+          <aside className="rounded-3xl bg-[var(--kc-navy)] p-7 text-white shadow-[0_18px_50px_rgba(15,23,42,0.18)]" aria-label="AI citation example">
+            <div className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--kc-orange)]">AI ANSWER</div>
+            <h2 className="mb-5 mt-2.5 text-[26px] font-semibold tracking-tight">best logistics firm in Gauteng</h2>
+            {["ChatGPT", "Perplexity", "Google AI"].map((name) => (
+              <div key={name} className="mb-2.5 flex items-center gap-3 rounded-xl border border-white/12 px-3.5 py-3 last:mb-0">
+                <span className="flex h-[22px] w-[22px] flex-none items-center justify-center rounded-md bg-[var(--kc-orange)] text-white">
+                  <Check size={14} strokeWidth={3} />
+                </span>
+                <span className="text-base font-medium">{name}</span>
+                <span className="ml-auto text-[13px] font-semibold text-[var(--kc-orange)]">Cited</span>
+              </div>
+            ))}
+          </aside>
         </div>
       </header>
 
       {/* TRUST / METRICS BAR */}
-      <div className="border-y bg-[var(--kc-light)]">
-        <div className="kc-container grid grid-cols-2 md:grid-cols-4 gap-y-8 py-6 text-center text-sm">
-          <div><span className="font-semibold text-2xl text-[var(--kc-navy)]">15+</span><br />years building for SA orgs</div>
-          <div><span className="font-semibold text-2xl text-[var(--kc-navy)]">Startups &amp; SMEs</span><br />our primary focus</div>
-          <div><span className="font-semibold text-2xl text-[var(--kc-navy)]">Own the stack</span><br />hosting to AI layer</div>
-          <div><span className="font-semibold text-2xl text-[var(--kc-navy)]">GEO-native</span><br />by design in 2026</div>
+      <div className="border-t border-[var(--kc-border)] bg-[var(--kc-light)]">
+        <div className="mx-auto grid max-w-[1180px] grid-cols-2 gap-4 px-6 py-[18px] text-center md:grid-cols-4 md:px-10">
+          <div>
+            <strong className="block text-base tracking-tight text-[var(--kc-navy)]">15+</strong>
+            <span className="text-[13px] text-[var(--kc-slate)]">years building for SA orgs</span>
+          </div>
+          <div>
+            <strong className="block text-base tracking-tight text-[var(--kc-navy)]">Startups &amp; SMEs</strong>
+            <span className="text-[13px] text-[var(--kc-slate)]">our primary focus</span>
+          </div>
+          <div>
+            <strong className="block text-base tracking-tight text-[var(--kc-navy)]">Own the stack</strong>
+            <span className="text-[13px] text-[var(--kc-slate)]">hosting to AI layer</span>
+          </div>
+          <div>
+            <strong className="block text-base tracking-tight text-[var(--kc-navy)]">GEO-native</strong>
+            <span className="text-[13px] text-[var(--kc-slate)]">by design in 2026</span>
+          </div>
         </div>
       </div>
 
