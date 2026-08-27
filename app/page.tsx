@@ -14,8 +14,12 @@ export default function KhemoConnect2026() {
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--kc-border)]">
         <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-6 md:px-10">
-          <a href="/" className="text-[20px] font-bold tracking-tight text-[var(--kc-navy)]">
-            <span className="text-[var(--kc-orange)]">Khemo</span>Connect
+          <a href="/" className="flex shrink-0 items-center" aria-label="KhemoConnect home">
+            <img
+              src="/khemoconnect-logo.png"
+              alt="KhemoConnect"
+              className="h-10 w-auto md:h-11"
+            />
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-[var(--kc-slate)] md:flex">
             <a href="#capabilities" className="hover:text-[var(--kc-orange)] transition">Capabilities</a>
@@ -335,7 +339,7 @@ export default function KhemoConnect2026() {
       <footer className="border-t mt-auto py-10 text-xs text-[var(--kc-slate)]">
         <div className="kc-container flex flex-col md:flex-row justify-between gap-y-4 items-center">
           <div className="flex items-center gap-2">
-            <img src="/New_KhemoConnect_Logo.png" alt="KhemoConnect" className="h-7 w-auto" />
+            <img src="/khemoconnect-logo.png" alt="KhemoConnect" className="h-7 w-auto" />
             <span>© {new Date().getFullYear()} KhemoConnect. Gauteng, South Africa.</span>
           </div>
           <div className="flex gap-6">

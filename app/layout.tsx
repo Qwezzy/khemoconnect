@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   description: "We don't just get you on Google, we get your business cited and recommended by AI engines. Hyper-personalized AI webpages and Day-One automation pipelines, powered by scalable AI-optimized hosting. For startups, scale-ups & local SMEs in South Africa.",
   icons: {
     icon: [
-      { url: "/New_KhemoConnect_Logo.png", sizes: "32x32", type: "image/png" },
-      { url: "/New_KhemoConnect_Logo.png", sizes: "180x180", type: "image/png" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+      { url: "/icon.png", type: "image/png" },
     ],
-    shortcut: "/New_KhemoConnect_Logo.png",
-    apple: "/New_KhemoConnect_Logo.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   alternates: {
     canonical: siteUrl,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "KhemoConnect - From SEO to GEO. AI Webpages. Automation from Day One.",
     description: "Generative Engine Optimization (GEO), dynamic personalized websites, and bundled AI automation pipelines. Built on our own scalable hosting stack for Gauteng startups, scale-ups and SMEs.",
     url: siteUrl,
-    images: [{ url: "/New_KhemoConnect_Logo.png" }],
+    images: [{ url: "/khemoconnect-logo.png" }],
   },
 };
 
@@ -51,7 +51,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "KhemoConnect",
     url: siteUrl,
-    logo: `${siteUrl}/New_KhemoConnect_Logo.png`,
+    logo: `${siteUrl}/khemoconnect-logo.png`,
     description: "KhemoConnect (division of Khemo IT Solutions) builds AI-optimized websites, hyper-personalized webpages, and Day-One automation pipelines for South African startups, scale-ups and SMEs. Specialists in Generative Engine Optimization (GEO).",
     areaServed: "Gauteng, South Africa",
     foundingDate: "2008",
