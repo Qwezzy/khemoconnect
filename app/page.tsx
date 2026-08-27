@@ -13,12 +13,12 @@ export default function KhemoConnect2026() {
     <div className="min-h-screen bg-white text-[#111] font-sans">
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-[var(--kc-border)]">
-        <div className="mx-auto flex h-[96px] max-w-[1180px] items-center justify-between px-6 md:h-[108px] md:px-10">
+        <div className="mx-auto flex h-[72px] max-w-[1180px] items-center justify-between px-6 md:px-10">
           <a href="/" className="flex shrink-0 items-center py-2" aria-label="KhemoConnect home">
             <img
-              src="/khemoconnect-logo.png"
+              src="/logo-horizontal-light.jpg"
               alt="KhemoConnect — Trusted Web Solutions"
-              className="h-[64px] w-auto md:h-[76px]"
+              className="h-11 w-auto md:h-12"
             />
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-[var(--kc-slate)] md:flex">
@@ -113,7 +113,8 @@ export default function KhemoConnect2026() {
       </div>
 
       {/* CAPABILITIES - The 3 pillars + infra */}
-      <section id="capabilities" className="kc-container kc-section">
+      <section id="capabilities" className="bg-white">
+        <div className="kc-container kc-section">
         <div className="text-center mb-12">
           <div className="uppercase tracking-[2px] text-xs font-semibold text-[var(--kc-orange)] mb-3">THE 2026 DIFFERENCE</div>
           <h2 className="kc-heading text-3xl md:text-4xl">Core offerings that win in the age of AI search and automation</h2>
@@ -172,23 +173,25 @@ export default function KhemoConnect2026() {
             </ul>
           </div>
         </div>
+        </div>
       </section>
 
       {/* AI MZANSI - New Skool Community */}
-      <section id="ai-mzansi" className="kc-container kc-section border-t">
+      <section id="ai-mzansi" className="bg-[var(--kc-navy)]">
+        <div className="kc-container kc-section">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="uppercase tracking-[2px] text-xs font-semibold text-[var(--kc-orange)] mb-3">NEW OFFERING</div>
-            <h2 className="kc-heading text-3xl md:text-4xl mb-4">Ai Mzansi</h2>
-            <p className="text-xl text-[var(--kc-slate)] mb-6">The Skool community for Agency Automation in South Africa.</p>
+            <h2 className="kc-heading text-3xl md:text-4xl mb-4 text-white">Ai Mzansi</h2>
+            <p className="text-xl text-slate-300 mb-6">The Skool community for Agency Automation in South Africa.</p>
             
-            <p className="text-[var(--kc-slate)] mb-6">Master GEO, AI Webpages, and Day-One automation pipelines. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
+            <p className="text-slate-300 mb-6">Master GEO, AI Webpages, and Day-One automation pipelines. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
             
             <div className="flex flex-wrap gap-4">
               <a href="https://www.skool.com/ai-mzansi-7283" target="_blank" rel="noopener noreferrer" className="kc-btn-primary inline-flex items-center gap-2">
                 Join Ai Mzansi on Skool <ArrowRight size={18} />
               </a>
-              <a href="#packages" className="kc-btn-secondary">
+              <a href="#packages" className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 font-medium text-white hover:bg-white hover:text-[var(--kc-navy)] transition-colors">
                 See service packages
               </a>
             </div>
@@ -201,10 +204,11 @@ export default function KhemoConnect2026() {
             />
           </div>
         </div>
+        </div>
       </section>
 
       {/* LIVE DEMOS */}
-      <section id="demo" className="bg-[var(--kc-light)] kc-section border-y">
+      <section id="demo" className="bg-[var(--kc-light)] kc-section">
         <div className="kc-container">
           <div className="max-w-2xl mb-10">
             <div className="uppercase tracking-[2px] text-xs font-semibold text-[var(--kc-orange)] mb-3">EXPERIENCE THE DIFFERENCE</div>
@@ -245,7 +249,8 @@ export default function KhemoConnect2026() {
       </section>
 
       {/* PACKAGES */}
-      <section id="packages" className="kc-container kc-section">
+      <section id="packages" className="bg-white">
+        <div className="kc-container kc-section">
         <div className="text-center mb-10">
           <h2 className="kc-heading text-3xl md:text-4xl mb-3">Packages that deliver results fast.</h2>
           <p className="text-[var(--kc-slate)] max-w-md mx-auto">Transparent starting prices. Custom work scoped after your free audit. All include our AI-optimized hosting.</p>
@@ -275,21 +280,22 @@ export default function KhemoConnect2026() {
           ))}
         </div>
         <p className="text-center text-xs mt-6 text-[var(--kc-slate)]">Prices are starting points for standard scopes. Custom work (including Ai Mzansi training bundles) quoted after your free audit. All include our scalable AI-optimized hosting.</p>
+        </div>
       </section>
 
       {/* GEO SECTION */}
-      <section id="geo" className="border-t kc-section bg-white">
-        <div className="kc-container">
+      <section id="geo" className="bg-[var(--kc-navy)]">
+        <div className="kc-container kc-section">
           <div className="grid md:grid-cols-5 gap-10 items-center">
             <div className="md:col-span-3">
-              <h2 className="kc-heading text-3xl mb-6">What is Generative Engine Optimization (GEO) in 2026?</h2>
+              <h2 className="kc-heading text-3xl mb-6 text-white">What is Generative Engine Optimization (GEO) in 2026?</h2>
           
-              <div className="prose prose-slate max-w-none text-[var(--kc-slate)]">
+              <div className="prose max-w-none text-slate-300">
                 <p>Buyers no longer just click links. They ask ChatGPT Search, Perplexity, Gemini, and Google AI Overviews direct questions and receive synthesized answers.</p>
                 
-                <p className="font-medium text-[var(--kc-navy)] mt-4">GEO is the practice of structuring your content and digital presence so AI engines retrieve, cite, and recommend your brand.</p>
+                <p className="font-medium text-white mt-4">GEO is the practice of structuring your content and digital presence so AI engines retrieve, cite, and recommend your brand.</p>
 
-                <h4 className="font-semibold mt-8 mb-2 text-[var(--kc-navy)]">How KhemoConnect executes GEO</h4>
+                <h4 className="font-semibold mt-8 mb-2 text-[var(--kc-orange)]">How KhemoConnect executes GEO</h4>
                 <ul className="list-disc pl-5 space-y-1">
                   <li>Precise, authoritative definitions and local terminology (Gauteng-specific examples)</li>
                   <li>Semantic HTML + rich structured data (Service, FAQ, Organization, LocalBusiness signals)</li>
@@ -298,8 +304,8 @@ export default function KhemoConnect2026() {
                 </ul>
               </div>
 
-              <div className="mt-8 p-6 border rounded-2xl bg-[var(--kc-light)] text-sm">
-                <strong>This very page is built with GEO in mind.</strong> View source to see the structured data, semantic headings, and clear definitions we ship for clients.
+              <div className="mt-8 p-6 border border-white/15 rounded-2xl bg-white/5 text-sm text-slate-300">
+                <strong className="text-white">This very page is built with GEO in mind.</strong> View source to see the structured data, semantic headings, and clear definitions we ship for clients.
               </div>
             </div>
 
@@ -315,37 +321,39 @@ export default function KhemoConnect2026() {
       </section>
 
       {/* CTA - Strong offer close */}
-      <section id="cta" className="kc-container kc-section text-center border-t">
+      <section id="cta" className="bg-[var(--kc-orange)]">
+        <div className="kc-container kc-section text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="kc-heading text-3xl mb-4">Claim your free GEO + AI Audit today</h2>
-          <p className="text-lg text-[var(--kc-slate)] mb-6">We'll audit your current site for AI visibility gaps, show you the exact fixes, and deliver a custom roadmap, normally R12,500. No hard sell.</p>
+          <h2 className="kc-heading text-3xl mb-4 text-white">Claim your free GEO + AI Audit today</h2>
+          <p className="text-lg text-white/90 mb-6">We'll audit your current site for AI visibility gaps, show you the exact fixes, and deliver a custom roadmap, normally R12,500. No hard sell.</p>
           
           <a 
             href="https://www.khemo.co.za/contact" 
             target="_blank"
-            className="kc-btn-primary px-12 py-4 text-lg inline-flex items-center gap-2"
+            className="rounded-full bg-[var(--kc-navy)] text-white px-12 py-4 text-lg inline-flex items-center gap-2"
           >
             Book My Free 45-Minute Audit <ArrowRight />
           </a>
-          <div className="mt-4 text-sm text-[var(--kc-slate)]">Limited spots this month • Centurion / Johannesburg based • Serving Gauteng SMEs &amp; startups</div>
+          <div className="mt-4 text-sm text-white/90">Limited spots this month • Centurion / Johannesburg based • Serving Gauteng SMEs &amp; startups</div>
 
-          <div className="mt-8 text-xs text-[var(--kc-slate)]">
-            Or explore <a href="#packages" className="underline">packages starting from R28k</a> or <a href="#ai-mzansi" className="underline">join Ai Mzansi on Skool</a>.
+          <div className="mt-8 text-xs text-white/90">
+            Or explore <a href="#packages" className="underline text-white">packages starting from R28k</a> or <a href="#ai-mzansi" className="underline text-white">join Ai Mzansi on Skool</a>.
           </div>
+        </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="border-t mt-auto py-10 text-xs text-[var(--kc-slate)]">
+      <footer className="bg-black mt-auto py-10 text-xs text-slate-400">
         <div className="kc-container flex flex-col md:flex-row justify-between gap-y-4 items-center">
           <div className="flex items-center gap-2">
-            <img src="/khemoconnect-logo.png" alt="KhemoConnect" className="h-10 w-auto md:h-11" />
+            <img src="/logo-horizontal-dark.png" alt="KhemoConnect" className="h-10 w-auto md:h-11" />
             <span>© {new Date().getFullYear()} KhemoConnect. Gauteng, South Africa.</span>
           </div>
           <div className="flex gap-6">
-            <a href="https://www.khemo.co.za/" className="hover:text-[var(--kc-navy)]">Main site</a>
-            <a href="#capabilities" className="hover:text-[var(--kc-navy)]">Services</a>
-            <a href="https://www.khemo.co.za/services" className="hover:text-[var(--kc-navy)]" target="_blank">Odoo • M365 • AI Agents</a>
+            <a href="https://www.khemo.co.za/" className="hover:text-white">Main site</a>
+            <a href="#capabilities" className="hover:text-white">Services</a>
+            <a href="https://www.khemo.co.za/services" className="hover:text-white" target="_blank">Odoo • M365 • AI Agents</a>
           </div>
           <div>Own the stack. Win with AI search.</div>
         </div>
