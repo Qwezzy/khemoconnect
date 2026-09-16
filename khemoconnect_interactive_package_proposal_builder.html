@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KhemoConnect - Interactive Package Showcase & Interactive Proposal Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#F38B1C',
+                            dark: '#1A202C',
+                            navy: '#2D3748',
+                            slate: '#4A5568',
+                            lightBg: '#F8FAFC'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-pattern {
+            background-color: #1a202c;
+            background-image: radial-gradient(#334155 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+        .badge-orange {
+            background-color: #fff7ed;
+            color: #c2410c;
+            border: 1px solid #ffedd5;
+        }
+        .pricing-card {
+            transition: all 0.25s ease-in-out;
+        }
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+        }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; }
+            .print-container { width: 100% !important; margin: 0 !important; padding: 0 !important; box-shadow: none !important; }
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <header class="bg-brand-dark text-white border-b border-slate-700 sticky top-0 z-50 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img src="https://lh3.googleusercontent.com/gg/ACRwjasHbstBMUBFPG_7WEzdYuyWsxYpZbDOnDEOmPaDcyicJbElYgW6cAG6Ty0gMg_trCnd1PfueyLBmeWD4ZH6bNkypyeOLMJ7xQOCIQaM5XQOglNnJSrL3vuKwOl3F7pTvlckzMRdlHuAKB0N_2zzjOmizyMubKdCotzLflTySX_FBeHKxooTm_9kYkS3xdOGD7rEcZpvscIUYvOlm9N1KrNGNVH1qO12nIL8luCB_eXBIyLKHI4t_RUddMBNwwoLGckz2HcJP56vw4-51p3El8s2eaLb-Typzg=s0" 
+                     alt="KhemoConnect Logo" 
+                     class="h-12 w-auto object-contain bg-white/10 p-1.5 rounded-lg border border-white/20">
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white leading-none">
+                        Khemo<span class="text-brand-orange">Connect</span>
+                    </h1>
+                    <p class="text-xs text-slate-400 font-medium">Web Solutions & Enterprise IT Consulting</p>
+                </div>
+            </div>
+
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                <a href="#web-packages" class="text-slate-300 hover:text-brand-orange transition-colors">Web Development</a>
+                <a href="#care-plans" class="text-slate-300 hover:text-brand-orange transition-colors">Care Plans</a>
+                <a href="#enterprise-it" class="text-slate-300 hover:text-brand-orange transition-colors">Enterprise IT</a>
+                <a href="#quote-builder" class="text-slate-300 hover:text-brand-orange transition-colors">Interactive Quote Builder</a>
+            </nav>
+
+            <div class="flex items-center space-x-3">
+                <button onclick="scrollToConfigurator()" class="bg-brand-orange hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-md transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Build Quote</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="bg-pattern text-white py-14 px-4 sm:px-6 lg:px-8 border-b border-slate-700 no-print">
+        <div class="max-w-5xl mx-auto text-center space-y-4">
+            <span class="inline-block bg-brand-orange/20 text-brand-orange text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full border border-brand-orange/30">
+                Official Commercial Package Catalog & Proposal Builder
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+                High-Performance Web & <span class="text-brand-orange">Microsoft 365 Architecture</span>
+            </h2>
+            <p class="text-slate-300 max-w-3xl mx-auto text-base sm:text-lg">
+                Explore our standardized digital build packages, recurring maintenance care plans, and enterprise SharePoint / Power Platform solutions. Select options below to configure custom proposals instantly.
+            </p>
+
+            <div class="pt-4 flex flex-wrap justify-center gap-6 text-sm text-slate-300">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-orange"></i>
+                    <span>PayFast & Yoco Ready</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-orange"></i>
+                    <span>POPIA Compliant</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-brand-orange"></i>
+                    <span>Microsoft Certified Consulting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 flex-grow">
+
+        <!-- Navigation Tabs -->
+        <div class="flex justify-center border-b border-slate-200 no-print" id="packages">
+            <div class="inline-flex p-1 bg-slate-200 rounded-xl max-w-full overflow-x-auto">
+                <button id="tab-web-btn" onclick="switchTab('web')" class="px-6 py-2.5 text-sm font-semibold rounded-lg bg-white text-slate-900 shadow-sm transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-globe mr-2 text-brand-orange"></i>Web Packages
+                </button>
+                <button id="tab-care-btn" onclick="switchTab('care')" class="px-6 py-2.5 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-shield-halved mr-2 text-brand-orange"></i>Monthly Care Plans
+                </button>
+                <button id="tab-enterprise-btn" onclick="switchTab('enterprise')" class="px-6 py-2.5 text-sm font-semibold rounded-lg text-slate-600 hover:text-slate-900 transition-all whitespace-nowrap">
+                    <i class="fa-solid fa-network-wired mr-2 text-brand-orange"></i>Enterprise IT & M365
+                </button>
+            </div>
+        </div>
+
+        <div id="tab-web" class="space-y-6">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-900">Conversion-Focused Web Packages</h3>
+                <p class="text-slate-600 text-sm mt-1">Designed for high lead capture, mobile speed optimization, and seamless South African payment integration.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Package 1: Business Starter -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card relative">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Business Starter</h4>
+                                <p class="text-xs text-slate-500 mt-1">Trades, services & local firms</p>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded-md text-slate-600">7-10 Days</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R4,500 <span class="text-xs font-normal text-slate-500">– R7,500</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">Essential web presence engineered for localized leads and WhatsApp direct contact.</p>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Up to 5 Custom Mobile-Responsive Pages</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Direct WhatsApp Floating Chat Widget</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Contact Form & Lead Email Alerts</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Local Google Business Profile Setup</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Basic On-Page SEO & Speed Tuning</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectPackage('Business Starter', 5500)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add to Proposal</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 2: Corporate Growth -->
+                <div class="bg-white rounded-2xl border-2 border-brand-orange p-6 flex flex-col justify-between pricing-card relative shadow-lg">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-orange text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow">
+                        Most Popular
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Corporate Growth</h4>
+                                <p class="text-xs text-slate-500 mt-1">Growing B2B & multi-branch</p>
+                            </div>
+                            <span class="text-xs bg-amber-50 text-amber-700 font-semibold px-2.5 py-1 rounded-md">2-3 Weeks</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R9,500 <span class="text-xs font-normal text-slate-500">– R16,500</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">Complete lead engine with CRM integration, structured service funnels, and analytics.</p>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> 10 to 15 High-Converting Pages</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Interactive Quote / Intake Workflows</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Mailchimp / Hubspot / CRM Sync</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Blog & Content Hub Architecture</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Advanced Analytics & Event Tracking</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectPackage('Corporate Growth', 12500)" class="w-full py-2.5 px-4 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 shadow">
+                            <span>Add to Proposal</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 3: E-Commerce Store -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card relative">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">E-Commerce Store</h4>
+                                <p class="text-xs text-slate-500 mt-1">Retailers, merchants & brands</p>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded-md text-slate-600">3-4 Weeks</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R14,500 <span class="text-xs font-normal text-slate-500">– R25,000+</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">Complete online store configured for South African payments, shipping, and automated inventory.</p>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Full Online Shop & Category Hierarchy</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Up to 30 Initial Product Uploads</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> PayFast / Yoco / Ozow Gateway Integration</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Automated Courier Shipping Rates (uAfrica)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Stock & Inventory Email Alerts</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectPackage('E-Commerce Store', 18500)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add to Proposal</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Package 4: Custom Enterprise Portal -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card relative">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-lg font-bold text-slate-900">Custom Web Portal</h4>
+                                <p class="text-xs text-slate-500 mt-1">Specialized SaaS & client hubs</p>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2.5 py-1 rounded-md text-slate-600">4-6 Weeks</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R25,000 <span class="text-xs font-normal text-slate-500">– R65,000+</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">Bespoke web applications featuring client portals, bookings, and custom database workflows.</p>
+                        <ul class="space-y-2.5 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> User Authentication & Role Privileges</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Client Self-Service Dashboard</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Automated Booking & Calendar Scheduling</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Custom Database Models & API Connections</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Comprehensive Admin Management Suite</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectPackage('Custom Web Portal', 35000)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add to Proposal</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tab-care" class="space-y-6 hidden">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-900">Monthly Website Care & Support Plans</h3>
+                <p class="text-slate-600 text-sm mt-1">Ensure proactive cloud hosting, security hardening, daily backups, and ongoing content edits.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Tier 1: Standard Care -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card">
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900">Tier 1: Standard Maintenance</h4>
+                            <p class="text-xs text-slate-500 mt-1">Essential operational security</p>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R850 <span class="text-xs font-normal text-slate-500">/ month</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Managed NVMe Cloud Hosting & SSL</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Weekly Core & Plugin Security Updates</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Automated Offsite Cloud Backups</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Uptime & Performance Monitoring</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Emergency Malware Removal Guarantee</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectCarePlan('Tier 1: Standard Care', 850)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add Care Plan</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tier 2: Growth Care -->
+                <div class="bg-white rounded-2xl border-2 border-brand-orange p-6 flex flex-col justify-between pricing-card relative shadow-md">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-orange text-white text-[10px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow">
+                        Recommended
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900">Tier 2: Growth Care</h4>
+                            <p class="text-xs text-slate-500 mt-1">Maintenance + active updates</p>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R2,200 <span class="text-xs font-normal text-slate-500">/ month</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Everything in Tier 1 Standard</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> 2 Hours Monthly Developer Tasks / Edits</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Monthly Technical SEO Health Audit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Form & Conversion Testing</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-orange"></i> Executive Monthly Performance Report</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectCarePlan('Tier 2: Growth Care', 2200)" class="w-full py-2.5 px-4 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2 shadow">
+                            <span>Add Care Plan</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tier 3: Accelerator Care -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card">
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-lg font-bold text-slate-900">Tier 3: Accelerator</h4>
+                            <p class="text-xs text-slate-500 mt-1">Continuous conversion growth</p>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R4,200 <span class="text-xs font-normal text-slate-500">/ month</span>
+                        </div>
+                        <ul class="space-y-2.5 text-xs text-slate-700 border-t border-slate-100 pt-4">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Everything in Tier 2 Growth</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 5 Hours Monthly Dedicated Dev / Design</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Monthly Conversion Rate Optimization (CRO)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Priority SLA (4-Hour Emergency Response)</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Quarterly Strategy Review Call</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectCarePlan('Tier 3: Accelerator', 4200)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add Care Plan</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="tab-enterprise" class="space-y-6 hidden">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-900">Enterprise IT & Microsoft 365 Architecture</h3>
+                <p class="text-slate-600 text-sm mt-1">SharePoint EDRMS document hubs, Power Platform process automation, and POPIA cloud compliance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Model A -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-brand-orange tracking-wider">Model A</span>
+                                <h4 class="text-lg font-bold text-slate-900">Tenant Diagnostics & Audits</h4>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2 py-1 rounded">Fixed Fee</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R22,500 <span class="text-xs font-normal text-slate-500">avg</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">5 to 10-day comprehensive review of Microsoft 365 security, SharePoint permissions, and POPIA risks.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Tenant Security & Compliance Assessment</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Active Directory & RBAC Audit</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Document Architecture Gap Report</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Prioritized Remediation Roadmap</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectEnterprise('M365 Tenant Diagnostic & Audit', 22500)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add Diagnostic</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model B -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-brand-orange tracking-wider">Model B</span>
+                                <h4 class="text-lg font-bold text-slate-900">Milestone System Projects</h4>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2 py-1 rounded">Turnkey</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R75,000 <span class="text-xs font-normal text-slate-500">avg</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">End-to-End deployment of SharePoint Intranets, Power Automate PO approvals, or Power Apps.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Centralized Department SharePoint Intranet</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Power Automate Workflow Approval Engines</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Custom Power Automate / Power Apps Portals</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> POPIA File Plan & Archival Policies</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectEnterprise('SharePoint & Power Platform Implementation', 75000)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add Project Scope</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Model C -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between pricing-card">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-brand-orange tracking-wider">Model C</span>
+                                <h4 class="text-lg font-bold text-slate-900">Managed IT Consulting Retainer</h4>
+                            </div>
+                            <span class="text-xs bg-slate-100 font-semibold px-2 py-1 rounded">Monthly</span>
+                        </div>
+                        <div class="text-3xl font-extrabold text-slate-900">
+                            R18,500 <span class="text-xs font-normal text-slate-500">/ month</span>
+                        </div>
+                        <p class="text-xs text-slate-600 border-b border-slate-100 pb-3">Fractional Solutions Architect and continuous administration of M365 environment.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 25 Dedicated Consulting Hours / Month</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Continuous DLP & Security Hardening</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Power BI Executive Dashboard Maintenance</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Direct Senior IT Architect Escalation</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100">
+                        <button onclick="selectEnterprise('Managed Enterprise Retainer (25 Hrs/Mo)', 18500)" class="w-full py-2.5 px-4 bg-slate-900 hover:bg-brand-orange text-white text-xs font-bold rounded-lg transition-colors flex items-center justify-center gap-2">
+                            <span>Add Retainer</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <section id="quote-builder" class="bg-white rounded-3xl border border-slate-200 card-shadow overflow-hidden scroll-mt-24 no-print">
+            <div class="bg-slate-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-slate-800">
+                <div>
+                    <div class="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-1">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Live Proposal Configurator</span>
+                    </div>
+                    <h3 class="text-2xl font-bold">Customize Your Scope & Calculate Investment</h3>
+                </div>
+                <div class="bg-slate-800 border border-slate-700 rounded-xl p-3 flex items-center gap-3">
+                    <i class="fa-solid fa-shield-halved text-brand-orange text-xl"></i>
+                    <div class="text-xs">
+                        <p class="font-bold text-white">Transparent Commercial Terms</p>
+                        <p class="text-slate-400">50% Deposit • 50% Launch Milestone</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Left Column: Options Selector -->
+                <div class="lg:col-span-7 space-y-6">
+
+                    <!-- Core Solution Selection -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">1. Select Primary Solution Package</label>
+                        <select id="sel-core-package" onchange="recalculateQuote()" class="w-full bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-xl p-3 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none font-medium">
+                            <option value="0" data-name="None Selected">-- Choose Solution Package --</option>
+                            <option value="5500" data-name="Business Starter Web (R4,500 - R7,500)">Business Starter Web (R5,500 avg)</option>
+                            <option value="12500" data-name="Corporate Growth Web (R9,500 - R16,500)" selected>Corporate Growth Web (R12,500 avg)</option>
+                            <option value="18500" data-name="E-Commerce Store (R14,500 - R25,000)">E-Commerce Store (R18,500 avg)</option>
+                            <option value="35000" data-name="Custom Web Portal (R25,000 - R65,000)">Custom Web Portal (R35,000 avg)</option>
+                            <option value="22500" data-name="M365 Tenant Diagnostic Audit">M365 Tenant Diagnostic Audit (R22,500)</option>
+                            <option value="75000" data-name="SharePoint & Power Platform Deployment">SharePoint & Power Platform Deployment (R75,000)</option>
+                        </select>
+                    </div>
+
+                    <!-- Recurring Care Plan Selection -->
+                    <div class="space-y-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">2. Select Monthly Support / Retainer Plan</label>
+                        <select id="sel-care-plan" onchange="recalculateQuote()" class="w-full bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-xl p-3 focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none font-medium">
+                            <option value="0" data-name="No Monthly Care Plan">No Monthly Support Plan (Self-managed)</option>
+                            <option value="850" data-name="Tier 1: Standard Web Care (R850/mo)">Tier 1: Standard Web Care (R850/mo)</option>
+                            <option value="2200" data-name="Tier 2: Growth Web Care (R2,200/mo)" selected>Tier 2: Growth Web Care (R2,200/mo)</option>
+                            <option value="4200" data-name="Tier 3: Accelerator Care (R4,200/mo)">Tier 3: Accelerator Care (R4,200/mo)</option>
+                            <option value="18500" data-name="Managed Enterprise M365 Retainer (R18,500/mo)">Managed Enterprise M365 Retainer (R18,500/mo)</option>
+                        </select>
+                    </div>
+
+                    <!-- Add-on Modules Checkboxes -->
+                    <div class="space-y-3">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">3. Select Optional Add-On Modules</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <label class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
+                                <input type="checkbox" id="addon-copy" value="3500" data-name="Professional Copywriting & Brand Tone (R3,500)" onchange="recalculateQuote()" class="w-4 h-4 text-brand-orange rounded focus:ring-brand-orange">
+                                <span class="ml-2 font-semibold text-slate-800">Copywriting & Content (R3,500)</span>
+                            </label>
+                            <label class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
+                                <input type="checkbox" id="addon-payfast" value="2500" data-name="Payment Gateway Setup (PayFast/Yoco) (R2,500)" onchange="recalculateQuote()" class="w-4 h-4 text-brand-orange rounded focus:ring-brand-orange">
+                                <span class="ml-2 font-semibold text-slate-800">Payment Gateway Integration (R2,500)</span>
+                            </label>
+                            <label class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
+                                <input type="checkbox" id="addon-powerbi" value="8500" data-name="Power BI Executive Analytics Dashboard (R8,500)" onchange="recalculateQuote()" class="w-4 h-4 text-brand-orange rounded focus:ring-brand-orange">
+                                <span class="ml-2 font-semibold text-slate-800">Power BI Live Analytics Dashboard (R8,500)</span>
+                            </label>
+                            <label class="flex items-center p-3 bg-slate-50 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-100 transition-colors">
+                                <input type="checkbox" id="addon-popia" value="4500" data-name="POPIA Privacy & Data Protection Compliance Setup (R4,500)" onchange="recalculateQuote()" class="w-4 h-4 text-brand-orange rounded focus:ring-brand-orange">
+                                <span class="ml-2 font-semibold text-slate-800">POPIA Data Protection Setup (R4,500)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Client Details Form -->
+                    <div class="space-y-3 pt-2">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">4. Client / Company Details</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <input type="text" id="client-company" placeholder="Company Name" class="bg-slate-50 border border-slate-300 text-sm rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-orange">
+                            <input type="text" id="client-contact" placeholder="Contact Person Name" class="bg-slate-50 border border-slate-300 text-sm rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-orange">
+                            <input type="email" id="client-email" placeholder="Email Address" class="bg-slate-50 border border-slate-300 text-sm rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-orange">
+                            <input type="tel" id="client-phone" placeholder="Phone / WhatsApp Number" class="bg-slate-50 border border-slate-300 text-sm rounded-xl p-3 outline-none focus:ring-2 focus:ring-brand-orange">
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Live Summary Breakdown -->
+                <div class="lg:col-span-5 bg-slate-50 rounded-2xl border border-slate-200 p-6 flex flex-col justify-between space-y-6">
+                    <div>
+                        <div class="border-b border-slate-200 pb-4 mb-4 flex justify-between items-center">
+                            <h4 class="text-base font-bold text-slate-900">Investment Summary</h4>
+                            <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-1 rounded-full">Live Estimate</span>
+                        </div>
+
+                        <!-- Selected Items List -->
+                        <div class="space-y-3 text-xs text-slate-700 max-h-56 overflow-y-auto pr-1" id="quote-items-list">
+                            <!-- JS populated -->
+                        </div>
+                    </div>
+
+                    <!-- Total Calculations -->
+                    <div class="space-y-4 pt-4 border-t border-slate-200">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-600 font-medium">Once-Off Project Total:</span>
+                            <span class="text-lg font-bold text-slate-900" id="total-onceoff">R12,500</span>
+                        </div>
+
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-slate-600 font-medium">Monthly Retainer Total:</span>
+                            <span class="text-lg font-bold text-brand-orange" id="total-monthly">R2,200 /mo</span>
+                        </div>
+
+                        <div class="bg-slate-200/60 rounded-xl p-3 text-[11px] text-slate-600 space-y-1">
+                            <div class="flex justify-between">
+                                <span>50% Initial Deposit Due:</span>
+                                <strong id="deposit-amount" class="text-slate-900">R6,250</strong>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>50% Launch Balance:</span>
+                                <strong id="launch-amount" class="text-slate-900">R6,250</strong>
+                            </div>
+                        </div>
+
+                        <button onclick="generateProposalModal()" class="w-full py-3 bg-brand-orange hover:bg-orange-600 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-file-pdf"></i>
+                            <span>Generate Official Proposal</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl border border-slate-200 p-8 card-shadow no-print">
+            <h3 class="text-2xl font-bold text-slate-900 text-center mb-2">Package Feature Comparison Matrix</h3>
+            <p class="text-slate-600 text-xs sm:text-sm text-center max-w-xl mx-auto mb-8">Detailed side-by-side comparison of deliverables across core web tiers.</p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs sm:text-sm border-collapse">
+                    <thead>
+                        <tr class="border-b-2 border-slate-200 text-slate-900 font-bold bg-slate-50">
+                            <th class="p-3">Deliverable Feature</th>
+                            <th class="p-3 text-center">Business Starter</th>
+                            <th class="p-3 text-center text-brand-orange bg-amber-50/50">Corporate Growth</th>
+                            <th class="p-3 text-center">E-Commerce Store</th>
+                            <th class="p-3 text-center">Custom Portal</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-700">
+                        <tr>
+                            <td class="p-3 font-semibold">Page Capacity</td>
+                            <td class="p-3 text-center">Up to 5 Pages</td>
+                            <td class="p-3 text-center font-bold text-slate-900 bg-amber-50/20">10 – 15 Pages</td>
+                            <td class="p-3 text-center">Catalog + 30 Products</td>
+                            <td class="p-3 text-center">Custom Architecture</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">Lead Engine / Contact Forms</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                            <td class="p-3 text-center bg-amber-50/20"><i class="fa-solid fa-check text-emerald-500"></i> (Custom Funnels)</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">WhatsApp Live Integration</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                            <td class="p-3 text-center bg-amber-50/20"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">CRM / Email Automation Sync</td>
+                            <td class="p-3 text-center text-slate-300"><i class="fa-solid fa-minus"></i></td>
+                            <td class="p-3 text-center bg-amber-50/20"><i class="fa-solid fa-check text-emerald-500"></i> Mailchimp/Hubspot</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i> Order Emails</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i> Custom API</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">South African Online Payment Gateway</td>
+                            <td class="p-3 text-center text-slate-300"><i class="fa-solid fa-minus"></i></td>
+                            <td class="p-3 text-center bg-amber-50/20 text-slate-300"><i class="fa-solid fa-minus"></i></td>
+                            <td class="p-3 text-center font-bold text-slate-900"><i class="fa-solid fa-check text-emerald-500"></i> PayFast / Yoco</td>
+                            <td class="p-3 text-center"><i class="fa-solid fa-check text-emerald-500"></i> PayFast / Stripe</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold">Google Local & SEO Setup</td>
+                            <td class="p-3 text-center">Basic Local SEO</td>
+                            <td class="p-3 text-center bg-amber-50/20 font-bold text-slate-900">Advanced On-Page SEO</td>
+                            <td class="p-3 text-center">E-com Product SEO</td>
+                            <td class="p-3 text-center">Custom Technical SEO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="proposal-modal" class="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden no-print">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 shadow-2xl relative">
+            <button onclick="closeProposalModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Printable Proposal Document Header -->
+            <div id="printable-area" class="space-y-6 text-slate-900">
+                <div class="flex justify-between items-start border-b border-slate-200 pb-6">
+                    <div class="flex items-center gap-3">
+                        <img src="https://lh3.googleusercontent.com/gg/ACRwjasHbstBMUBFPG_7WEzdYuyWsxYpZbDOnDEOmPaDcyicJbElYgW6cAG6Ty0gMg_trCnd1PfueyLBmeWD4ZH6bNkypyeOLMJ7xQOCIQaM5XQOglNnJSrL3vuKwOl3F7pTvlckzMRdlHuAKB0N_2zzjOmizyMubKdCotzLflTySX_FBeHKxooTm_9kYkS3xdOGD7rEcZpvscIUYvOlm9N1KrNGNVH1qO12nIL8luCB_eXBIyLKHI4t_RUddMBNwwoLGckz2HcJP56vw4-51p3El8s2eaLb-Typzg=s0" 
+                             alt="KhemoConnect Logo" class="h-10 w-auto">
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">KhemoConnect & IT Solutions</h2>
+                            <p class="text-xs text-slate-500">Commercial Project Proposal & Fee Estimate</p>
+                        </div>
+                    </div>
+                    <div class="text-right text-xs">
+                        <p class="font-bold text-brand-orange text-sm" id="proposal-date">Date: 2026-09-10</p>
+                        <p class="text-slate-500">Ref: KC-PROP-<span id="proposal-ref">9842</span></p>
+                    </div>
+                </div>
+
+                <!-- Client Info Card -->
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 grid grid-cols-2 gap-4 text-xs">
+                    <div>
+                        <p class="text-slate-500 font-medium">Prepared For:</p>
+                        <p class="font-bold text-slate-900 text-sm" id="modal-client-company">Company Name</p>
+                        <p class="text-slate-700" id="modal-client-contact">Attn: Contact Name</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-slate-500 font-medium">Contact Information:</p>
+                        <p class="text-slate-700" id="modal-client-email">email@domain.co.za</p>
+                        <p class="text-slate-700" id="modal-client-phone">+27 00 000 0000</p>
+                    </div>
+                </div>
+
+                <!-- Scope Breakdown Table -->
+                <div class="space-y-2">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700">Project Scope & Investment Schedule</h4>
+                    <table class="w-full text-xs text-left border-collapse border border-slate-200">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-900 font-bold">
+                                <th class="p-3 border-b border-slate-200">Selected Item / Service Module</th>
+                                <th class="p-3 border-b border-slate-200 text-right">Fee (ZAR)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="modal-items-table" class="divide-y divide-slate-200">
+                            <!-- JS populated -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Financial Schedule -->
+                <div class="bg-amber-50 border border-amber-200 p-4 rounded-xl text-xs space-y-2">
+                    <h5 class="font-bold text-amber-900">Commercial Terms & Payment Milestones</h5>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-amber-900">
+                        <div>
+                            <span class="text-slate-500">Initial Deposit (50%):</span>
+                            <p class="font-bold text-sm" id="modal-deposit">R0</p>
+                        </div>
+                        <div>
+                            <span class="text-slate-500">Launch Milestone (50%):</span>
+                            <p class="font-bold text-sm" id="modal-launch">R0</p>
+                        </div>
+                        <div>
+                            <span class="text-slate-500">Monthly Care / Retainer:</span>
+                            <p class="font-bold text-sm text-brand-orange" id="modal-monthly">R0 /mo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-slate-500 border-t border-slate-200 pt-4 space-y-1">
+                    <p>• Quote valid for 30 calendar days from issue date. All web builds include responsive mobile formatting, speed tuning, and SSL protection.</p>
+                    <p>• KhemoConnect & IT Solutions • Web Development, Managed Cloud & Enterprise Microsoft 365 Architecture.</p>
+                </div>
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-200">
+                <button onclick="closeProposalModal()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold rounded-xl transition-colors">
+                    Close & Edit
+                </button>
+                <button onclick="printProposal()" class="px-6 py-2.5 bg-brand-orange hover:bg-orange-600 text-white text-xs font-bold rounded-xl shadow transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print / Save as PDF</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4 sm:px-6 lg:px-8 border-t border-slate-800 text-xs no-print">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <img src="https://lh3.googleusercontent.com/gg/ACRwjasHbstBMUBFPG_7WEzdYuyWsxYpZbDOnDEOmPaDcyicJbElYgW6cAG6Ty0gMg_trCnd1PfueyLBmeWD4ZH6bNkypyeOLMJ7xQOCIQaM5XQOglNnJSrL3vuKwOl3F7pTvlckzMRdlHuAKB0N_2zzjOmizyMubKdCotzLflTySX_FBeHKxooTm_9kYkS3xdOGD7rEcZpvscIUYvOlm9N1KrNGNVH1qO12nIL8luCB_eXBIyLKHI4t_RUddMBNwwoLGckz2HcJP56vw4-51p3El8s2eaLb-Typzg=s0" 
+                     alt="Logo" class="h-8 w-auto bg-white/10 p-1 rounded">
+                <div>
+                    <span class="font-bold text-white">KhemoConnect & IT Solutions</span>
+                    <p class="text-[10px] text-slate-500">Commercial Playbook & Interactive Proposal Configurator</p>
+                </div>
+            </div>
+            <p>© 2026 KhemoConnect. All rights reserved. High-Performance Web & Enterprise IT Architecture.</p>
+        </div>
+    </footer>
+
+    <script>
+        
+        // Tab Switcher Logic
+        function switchTab(tabName) {
+            const tabs = ['web', 'care', 'enterprise'];
+            tabs.forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const btn = document.getElementById(`tab-${t}-btn`);
+                if (t === tabName) {
+                    el.classList.remove('hidden');
+                    btn.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+                    btn.classList.remove('text-slate-600');
+                } else {
+                    el.classList.add('hidden');
+                    btn.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
+                    btn.classList.add('text-slate-600');
+                }
+            });
+        }
+
+        // Scroll helper
+        function scrollToConfigurator() {
+            document.getElementById('quote-builder').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Fast select from cards
+        function selectPackage(packageName, price) {
+            const select = document.getElementById('sel-core-package');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(packageName)) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            recalculateQuote();
+            scrollToConfigurator();
+        }
+
+        function selectCarePlan(planName, price) {
+            const select = document.getElementById('sel-care-plan');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.includes(planName.split(':')[0])) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            recalculateQuote();
+            scrollToConfigurator();
+        }
+
+        function selectEnterprise(enterpriseName, price) {
+            const select = document.getElementById('sel-core-package');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].text.toLowerCase().includes(enterpriseName.toLowerCase().slice(0, 10))) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            recalculateQuote();
+            scrollToConfigurator();
+        }
+
+        // Calculate and re-render quote breakdown
+        function recalculateQuote() {
+            const coreSelect = document.getElementById('sel-core-package');
+            const careSelect = document.getElementById('sel-care-plan');
+            const itemsList = document.getElementById('quote-items-list');
+
+            let onceOffTotal = parseInt(coreSelect.value) || 0;
+            let monthlyTotal = parseInt(careSelect.value) || 0;
+            let itemListHTML = '';
+
+            // Add Core Package item
+            if (coreSelect.value > 0) {
+                const selectedOpt = coreSelect.options[coreSelect.selectedIndex];
+                const name = selectedOpt.getAttribute('data-name');
+                itemListHTML += `
+                    <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+                        <div>
+                            <p class="font-bold text-slate-900">${name}</p>
+                            <span class="text-[10px] text-slate-500">Core Package</span>
+                        </div>
+                        <span class="font-bold text-slate-900">R${parseInt(coreSelect.value).toLocaleString()}</span>
+                    </div>
+                `;
+            }
+
+            // Check Add-ons
+            const addons = [
+                document.getElementById('addon-copy'),
+                document.getElementById('addon-payfast'),
+                document.getElementById('addon-powerbi'),
+                document.getElementById('addon-popia')
+            ];
+
+            addons.forEach(addon => {
+                if (addon && addon.checked) {
+                    const price = parseInt(addon.value);
+                    const name = addon.getAttribute('data-name');
+                    onceOffTotal += price;
+                    itemListHTML += `
+                        <div class="flex justify-between items-center pb-2 border-b border-slate-200">
+                            <div>
+                                <p class="font-bold text-slate-800">${name}</p>
+                                <span class="text-[10px] text-brand-orange">Add-On Module</span>
+                            </div>
+                            <span class="font-bold text-slate-900">R${price.toLocaleString()}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            // Add Monthly Care item
+            if (careSelect.value > 0) {
+                const selectedCareOpt = careSelect.options[careSelect.selectedIndex];
+                const careName = selectedCareOpt.getAttribute('data-name');
+                itemListHTML += `
+                    <div class="flex justify-between items-center pt-1">
+                        <div>
+                            <p class="font-bold text-brand-orange">${careName}</p>
+                            <span class="text-[10px] text-slate-500">Recurring Support</span>
+                        </div>
+                        <span class="font-bold text-brand-orange">R${parseInt(careSelect.value).toLocaleString()} /mo</span>
+                    </div>
+                `;
+            }
+
+            if (!itemListHTML) {
+                itemListHTML = `<p class="text-slate-400 italic">No packages selected yet. Select a package above.</p>`;
+            }
+
+            itemsList.innerHTML = itemListHTML;
+
+            // Totals
+            document.getElementById('total-onceoff').innerText = `R${onceOffTotal.toLocaleString()}`;
+            document.getElementById('total-monthly').innerText = `R${monthlyTotal.toLocaleString()} /mo`;
+            document.getElementById('deposit-amount').innerText = `R${Math.round(onceOffTotal * 0.5).toLocaleString()}`;
+            document.getElementById('launch-amount').innerText = `R${Math.round(onceOffTotal * 0.5).toLocaleString()}`;
+        }
+
+        // Modal Proposal Generator
+        function generateProposalModal() {
+            const company = document.getElementById('client-company').value || 'Client Enterprise';
+            const contact = document.getElementById('client-contact').value || 'Valued Client';
+            const email = document.getElementById('client-email').value || 'client@company.co.za';
+            const phone = document.getElementById('client-phone').value || '+27 11 000 0000';
+
+            document.getElementById('modal-client-company').innerText = company;
+            document.getElementById('modal-client-contact').innerText = `Attn: ${contact}`;
+            document.getElementById('modal-client-email').innerText = email;
+            document.getElementById('modal-client-phone').innerText = phone;
+
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('proposal-date').innerText = `Date: ${today}`;
+            document.getElementById('proposal-ref').innerText = Math.floor(1000 + Math.random() * 9000);
+
+            // Populate proposal table
+            const tableBody = document.getElementById('modal-items-table');
+            let tableHTML = '';
+            
+            const coreSelect = document.getElementById('sel-core-package');
+            let onceOffTotal = parseInt(coreSelect.value) || 0;
+
+            if (coreSelect.value > 0) {
+                const name = coreSelect.options[coreSelect.selectedIndex].getAttribute('data-name');
+                tableHTML += `
+                    <tr>
+                        <td class="p-3 font-semibold text-slate-900">${name}</td>
+                        <td class="p-3 text-right font-bold">R${parseInt(coreSelect.value).toLocaleString()}</td>
+                    </tr>
+                `;
+            }
+
+            const addons = [
+                document.getElementById('addon-copy'),
+                document.getElementById('addon-payfast'),
+                document.getElementById('addon-powerbi'),
+                document.getElementById('addon-popia')
+            ];
+
+            addons.forEach(addon => {
+                if (addon && addon.checked) {
+                    const price = parseInt(addon.value);
+                    onceOffTotal += price;
+                    tableHTML += `
+                        <tr>
+                            <td class="p-3 text-slate-700">${addon.getAttribute('data-name')}</td>
+                            <td class="p-3 text-right font-semibold">R${price.toLocaleString()}</td>
+                        </tr>
+                    `;
+                }
+            });
+
+            const careSelect = document.getElementById('sel-care-plan');
+            const monthlyVal = parseInt(careSelect.value) || 0;
+
+            tableBody.innerHTML = tableHTML || `<tr><td colspan="2" class="p-3 text-center text-slate-400">No core package selected.</td></tr>`;
+
+            document.getElementById('modal-deposit').innerText = `R${Math.round(onceOffTotal * 0.5).toLocaleString()}`;
+            document.getElementById('modal-launch').innerText = `R${Math.round(onceOffTotal * 0.5).toLocaleString()}`;
+            document.getElementById('modal-monthly').innerText = `R${monthlyVal.toLocaleString()} /mo`;
+
+            document.getElementById('proposal-modal').classList.remove('hidden');
+        }
+
+        function closeProposalModal() {
+            document.getElementById('proposal-modal').classList.add('hidden');
+        }
+
+        function printProposal() {
+            window.print();
+        }
+
+        // Initial Calculation
+        window.onload = function() {
+            recalculateQuote();
+        };
+    </script>
+
+</body>
+</html>

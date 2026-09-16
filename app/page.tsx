@@ -26,6 +26,7 @@ export default function KhemoConnect2026() {
             <a href="#demo" className="hover:text-[var(--kc-orange)] transition">See it live</a>
             <a href="#packages" className="hover:text-[var(--kc-orange)] transition">Packages</a>
             <a href="#ai-mzansi" className="hover:text-[var(--kc-orange)] transition">Ai Mzansi</a>
+            <a href="/packages" className="hover:text-[var(--kc-orange)] transition font-semibold">Pricing</a>
             <a
               href="https://www.khemo.co.za/contact"
               className="inline-flex items-center rounded-[10px] bg-[var(--kc-orange)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--kc-orange-dark)] transition-colors"
@@ -256,30 +257,93 @@ export default function KhemoConnect2026() {
           <p className="text-[var(--kc-slate)] max-w-md mx-auto">Transparent starting prices. Custom work scoped after your free audit. All include our AI-optimized hosting.</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {[
-            { name: "GEO Launch", price: "From R28,000", audience: "Startups & local SMEs", desc: "Full GEO audit, semantic + structured data overhaul, authoritative content framework + hosting foundation.", pitch: "Be the answer AI engines recommend." },
-            { name: "AI Webpages", price: "From R42,000", audience: "Scale-ups, retail & tech", desc: "Dynamic personalization engine supporting 3+ visitor segments. Adaptive hero, cases, and CTAs.", pitch: "One site. Every visitor sees the right story." },
-            { name: "Day-One Automation", price: "From R35,000", audience: "All (powerful add-on)", desc: "Lead intake → classify → background → proposal → WhatsApp/SMS ping. Integrated with your new site or existing CRM.", pitch: "Website + automated pipeline from day one." },
-            { name: "Full Stack (Recommended)", price: "From R85,000", audience: "Ambitious SMEs & startups", desc: "GEO + Personalization + Automation + mobile-first portal + 3 months support & optimisation on our hosting.", pitch: "Own the stack. Win in search + experience + ops." },
+            { 
+              name: "GEO Launch", 
+              price: "From R28,000", 
+              audience: "Startups & local SMEs", 
+              desc: "Full GEO audit, semantic + structured data overhaul, authoritative content framework + hosting foundation.", 
+              pitch: "Be the answer AI engines recommend." 
+            },
+            { 
+              name: "AI Webpages", 
+              price: "From R42,000", 
+              audience: "Scale-ups, retail & tech", 
+              desc: "Dynamic personalization engine supporting 3+ visitor segments. Adaptive hero, cases, and CTAs.", 
+              pitch: "One site. Every visitor sees the right story." 
+            },
+            { 
+              name: "Day-One Automation", 
+              price: "From R35,000", 
+              audience: "All (powerful add-on)", 
+              desc: "Lead intake → classify → background → proposal → WhatsApp/SMS ping. Integrated with your new site or existing CRM.", 
+              pitch: "Website + automated pipeline from day one." 
+            },
+            { 
+              name: "Full Stack", 
+              badge: "Recommended",
+              price: "From R85,000", 
+              audience: "Ambitious SMEs & startups", 
+              desc: "GEO + Personalization + Automation + mobile-first portal + 3 months support & optimisation on our hosting.", 
+              pitch: "Own the stack. Win in search + experience + ops." 
+            },
           ].map((pkg, i) => (
-            <div key={i} className="kc-card flex flex-col">
-              <div className="flex justify-between items-start mb-1">
-                <div>
-                  <div className="uppercase text-xs tracking-widest text-[var(--kc-orange)] font-medium">{pkg.audience}</div>
-                  <h3 className="text-2xl font-semibold">{pkg.name}</h3>
+            <div 
+              key={i} 
+              className={`kc-card flex flex-col h-full relative transition-all duration-200 ${
+                pkg.badge 
+                  ? "border-2 border-[var(--kc-orange)] shadow-md ring-1 ring-[var(--kc-orange)]/20" 
+                  : "hover:border-slate-300"
+              }`}
+            >
+              {pkg.badge && (
+                <div className="absolute -top-3 right-4 bg-[var(--kc-orange)] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-sm">
+                  {pkg.badge}
                 </div>
-                <div className="text-right">
-                  <div className="text-sm font-semibold text-[var(--kc-navy)]">{pkg.price}</div>
+              )}
+              
+              <div className="mb-3">
+                <div className="uppercase text-[11px] tracking-widest text-[var(--kc-orange)] font-semibold mb-1">
+                  {pkg.audience}
                 </div>
+                <h3 className="text-2xl font-bold text-[var(--kc-navy)] leading-tight">
+                  {pkg.name}
+                </h3>
               </div>
-              <p className="text-[var(--kc-slate)] mb-4 flex-1">{pkg.desc}</p>
-              <div className="text-sm font-medium text-[var(--kc-orange)] mb-4">“{pkg.pitch}”</div>
-              <a href="#cta" className="kc-btn-primary text-sm justify-center">Get started with {pkg.name}</a>
+
+              <div className="mb-4 pb-3 border-b border-slate-100 flex items-baseline justify-between">
+                <span className="text-xl font-bold text-[var(--kc-navy)]">{pkg.price}</span>
+                <span className="text-xs text-slate-400 font-medium">standard scope</span>
+              </div>
+
+              <p className="text-[var(--kc-slate)] text-sm leading-relaxed mb-4 flex-1">
+                {pkg.desc}
+              </p>
+
+              <div className="text-xs font-semibold text-[var(--kc-orange-dark)] bg-orange-50/70 border border-orange-100/80 rounded-lg p-2.5 mb-5 italic">
+                “{pkg.pitch}”
+              </div>
+
+              <a 
+                href="#cta" 
+                className={`text-sm font-semibold rounded-full py-2.5 px-4 text-center transition-all ${
+                  pkg.badge 
+                    ? "kc-btn-primary shadow-sm hover:shadow" 
+                    : "kc-btn-secondary"
+                }`}
+              >
+                Get started with {pkg.name}
+              </a>
             </div>
           ))}
         </div>
         <p className="text-center text-xs mt-6 text-[var(--kc-slate)]">Prices are starting points for standard scopes. Custom work (including Ai Mzansi training bundles) quoted after your free audit. All include our scalable AI-optimized hosting.</p>
+        <div className="text-center mt-4">
+          <a href="/packages" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--kc-orange)] hover:text-[var(--kc-orange-dark)] underline underline-offset-4">
+            Need a custom combination? Launch our Interactive Proposal & Scope Builder →
+          </a>
+        </div>
         </div>
       </section>
 
