@@ -55,7 +55,7 @@ export default function KhemoConnect2026() {
               Be the business <span className="text-[var(--kc-orange)]">AI recommends.</span>
             </h1>
             <p className="mb-[22px] max-w-[540px] text-[17px] leading-relaxed text-[var(--kc-slate)]">
-              GEO-optimized sites and Day-One automation for ambitious South African SMEs. Built on our own stack, from hosting to follow-up.
+              GEO-optimised sites, hosting and Microsoft 365 for ambitious South African businesses. Built on our own stack, from hosting to follow-up.
             </p>
             <div className="flex flex-wrap gap-2.5">
               <a

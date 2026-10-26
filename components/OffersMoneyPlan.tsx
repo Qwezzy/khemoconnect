@@ -55,7 +55,7 @@ const growthOffers: Offer[] = [
   {
     name: "Firm Support retainer",
     price: "From R1,500 pm",
-    points: ["Microsoft licences billed within the managed service"],
+    points: ["Microsoft licences are billed by Microsoft, not by us."],
     cta: "Get a quote",
   },
 ];
