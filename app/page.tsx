@@ -7,7 +7,7 @@ import { AutomationPipelineDemo } from "../components/AutomationPipelineDemo";
 import { OffersMoneyPlan } from "../components/OffersMoneyPlan";
 
 // KhemoConnect 2026 - Upgraded positioning landing page
-// GEO-optimized: semantic HTML, clear definitions, authoritative local examples, structured data in layout
+// GEO-optimised: semantic HTML, clear definitions, authoritative local examples, structured data in layout
 
 export default function KhemoConnect2026() {
   return (
@@ -146,12 +146,12 @@ export default function KhemoConnect2026() {
             <div className="mt-4 text-xs uppercase tracking-widest text-[var(--kc-orange)]">One codebase. Many perfect experiences.</div>
           </div>
 
-          {/* 3. Day-One Automation */}
+          {/* 3. Microsoft 365 and Workflow Automation */}
           <div className="kc-card flex flex-col">
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--kc-orange)]/10 text-[var(--kc-orange)]">
               <Bot size={22} />
             </div>
-            <h3 className="font-semibold text-xl mb-2">“Day-One” AI Automation Packages</h3>
+            <h3 className="font-semibold text-xl mb-2">Microsoft 365 and Workflow Automation</h3>
             <p className="text-[var(--kc-slate)] flex-1">
               Don't just host a website - host an automated business pipeline. Lead arrives → AI classifies → background check → personalized proposal drafted → owner pinged on WhatsApp to approve &amp; send.
             </p>
@@ -186,7 +186,7 @@ export default function KhemoConnect2026() {
             <h2 className="kc-heading text-3xl md:text-4xl mb-4 text-white">Ai Mzansi</h2>
             <p className="text-xl text-slate-300 mb-6">The Skool community for Agency Automation in South Africa.</p>
             
-            <p className="text-slate-300 mb-6">Master GEO, AI Webpages, and Day-One automation pipelines. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
+            <p className="text-slate-300 mb-6">Master GEO-ready websites and practical automation. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
             
             <div className="flex flex-wrap gap-4">
               <a href="https://www.skool.com/ai-mzansi-7283" target="_blank" rel="noopener noreferrer" className="kc-btn-primary inline-flex items-center gap-2">
@@ -238,7 +238,7 @@ export default function KhemoConnect2026() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="text-[var(--kc-orange)]"><Bot /></div>
-                  <h3 className="font-semibold text-2xl">Day-One AI Automation Pipeline Demo</h3>
+                  <h3 className="font-semibold text-2xl">See an Automation Workflow in Action</h3>
                 </div>
                 <p className="text-[var(--kc-slate)]">Simulate a lead coming through a KhemoConnect site or app. See classification, proposal generation, and the WhatsApp notification your team receives, all from day one.</p>
               </div>
@@ -266,7 +266,7 @@ export default function KhemoConnect2026() {
                   <li>Precise, authoritative definitions and local terminology (Gauteng-specific examples)</li>
                   <li>Semantic HTML + rich structured data (Service, FAQ, Organization, LocalBusiness signals)</li>
                   <li>Clear question-answer blocks and comparison tables that synthesis engines love</li>
-                  <li>Fast, trustworthy pages on our optimized hosting (Core Web Vitals + crawlability)</li>
+                  <li>Fast, trustworthy pages on our optimised hosting (Core Web Vitals + crawlability)</li>
                 </ul>
               </div>
 
