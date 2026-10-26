@@ -4,9 +4,10 @@ import React from "react";
 import { ArrowRight, Check, Zap, Target, Bot, Server } from "lucide-react";
 import { PersonalizationDemo } from "../components/PersonalizationDemo";
 import { AutomationPipelineDemo } from "../components/AutomationPipelineDemo";
+import { OffersMoneyPlan } from "../components/OffersMoneyPlan";
 
 // KhemoConnect 2026 - Upgraded positioning landing page
-// GEO-optimized: semantic HTML, clear definitions, authoritative local examples, structured data in layout
+// GEO-optimised: semantic HTML, clear definitions, authoritative local examples, structured data in layout
 
 export default function KhemoConnect2026() {
   return (
@@ -17,28 +18,28 @@ export default function KhemoConnect2026() {
           <a href="/" className="flex shrink-0 items-center py-2" aria-label="KhemoConnect home">
             <img
               src="/logo-horizontal-light.jpg"
-              alt="KhemoConnect — Trusted Web Solutions"
+              alt="KhemoConnect: Trusted Web Solutions"
               className="h-11 w-auto md:h-12"
             />
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-[var(--kc-slate)] md:flex">
+            <a href="#offers" className="hover:text-[var(--kc-orange)] transition">Offers</a>
             <a href="#capabilities" className="hover:text-[var(--kc-orange)] transition">Capabilities</a>
             <a href="#demo" className="hover:text-[var(--kc-orange)] transition">See it live</a>
-            <a href="#packages" className="hover:text-[var(--kc-orange)] transition">Packages</a>
             <a href="#ai-mzansi" className="hover:text-[var(--kc-orange)] transition">Ai Mzansi</a>
-            <a href="/packages" className="hover:text-[var(--kc-orange)] transition font-semibold">Pricing</a>
+            <a href="#offers" className="hover:text-[var(--kc-orange)] transition font-semibold">Pricing</a>
             <a
               href="https://www.khemo.co.za/contact"
               className="inline-flex items-center rounded-[10px] bg-[var(--kc-orange)] px-4 py-2 text-sm font-medium text-white hover:bg-[var(--kc-orange-dark)] transition-colors"
             >
-              Claim Free Audit
+              Get a free GEO snapshot
             </a>
           </div>
           <a
             href="https://www.khemo.co.za/contact"
             className="inline-flex items-center rounded-[10px] bg-[var(--kc-orange)] px-3 py-2 text-sm font-medium text-white md:hidden"
           >
-            Claim Free Audit
+            Get a free GEO snapshot
           </a>
         </div>
       </nav>
@@ -54,25 +55,22 @@ export default function KhemoConnect2026() {
               Be the business <span className="text-[var(--kc-orange)]">AI recommends.</span>
             </h1>
             <p className="mb-[22px] max-w-[540px] text-[17px] leading-relaxed text-[var(--kc-slate)]">
-              GEO-optimized sites and Day-One automation for ambitious South African SMEs. Built on our own stack, from hosting to follow-up.
+              GEO-optimised sites, hosting and Microsoft 365 for ambitious South African businesses. Built on our own stack, from hosting to follow-up.
             </p>
             <div className="flex flex-wrap gap-2.5">
               <a
                 href="https://www.khemo.co.za/contact"
                 className="inline-flex items-center gap-2 rounded-[10px] bg-[var(--kc-orange)] px-[22px] py-3.5 text-base font-medium text-white hover:bg-[var(--kc-orange-dark)] transition-colors"
               >
-                Claim my free audit <ArrowRight size={18} />
+                Get a free GEO snapshot <ArrowRight size={18} />
               </a>
               <a
-                href="#packages"
+                href="#offers"
                 className="inline-flex items-center rounded-[10px] border border-[var(--kc-border)] bg-white px-5 py-3.5 text-base font-medium text-[var(--kc-navy)] hover:bg-[var(--kc-light)] transition-colors"
               >
-                See packages from R28k
+                See offers from R4,550
               </a>
             </div>
-            <p className="mt-3 text-[13px] text-[var(--kc-slate)]">
-              45-minute GEO + AI audit · R12,500 value · no obligation
-            </p>
           </div>
 
           <aside className="rounded-3xl bg-[var(--kc-navy)] p-7 text-white shadow-[0_18px_50px_rgba(15,23,42,0.18)]" aria-label="AI citation example">
@@ -114,6 +112,8 @@ export default function KhemoConnect2026() {
       </div>
 
       {/* CAPABILITIES - The 3 pillars + infra */}
+      <OffersMoneyPlan />
+
       <section id="capabilities" className="bg-white">
         <div className="kc-container kc-section">
         <div className="text-center mb-12">
@@ -134,24 +134,24 @@ export default function KhemoConnect2026() {
             <p className="mt-4 text-sm font-medium text-[var(--kc-orange)]">When buyers ask ChatGPT or Perplexity for “best boutique logistics firm in Gauteng”, your business is the synthesized answer.</p>
           </div>
 
-          {/* 2. AI Webpages */}
+          {/* 2. GEO-Ready Websites */}
           <div className="kc-card flex flex-col">
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--kc-orange)]/10 text-[var(--kc-orange)]">
               <Zap size={22} />
             </div>
-            <h3 className="font-semibold text-xl mb-2">AI Webpages &amp; Hyper-Personalization</h3>
+            <h3 className="font-semibold text-xl mb-2">GEO-Ready Websites and Personalised Content</h3>
             <p className="text-[var(--kc-slate)] flex-1">
               Static sites are over. Your website adapts instantly to who is looking: B2B tech visitor sees integration case studies; retail buyer sees quick-commerce and local fulfilment stories.
             </p>
             <div className="mt-4 text-xs uppercase tracking-widest text-[var(--kc-orange)]">One codebase. Many perfect experiences.</div>
           </div>
 
-          {/* 3. Day-One Automation */}
+          {/* 3. Microsoft 365 and Workflow Automation */}
           <div className="kc-card flex flex-col">
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--kc-orange)]/10 text-[var(--kc-orange)]">
               <Bot size={22} />
             </div>
-            <h3 className="font-semibold text-xl mb-2">“Day-One” AI Automation Packages</h3>
+            <h3 className="font-semibold text-xl mb-2">Microsoft 365 and Workflow Automation</h3>
             <p className="text-[var(--kc-slate)] flex-1">
               Don't just host a website - host an automated business pipeline. Lead arrives → AI classifies → background check → personalized proposal drafted → owner pinged on WhatsApp to approve &amp; send.
             </p>
@@ -186,13 +186,13 @@ export default function KhemoConnect2026() {
             <h2 className="kc-heading text-3xl md:text-4xl mb-4 text-white">Ai Mzansi</h2>
             <p className="text-xl text-slate-300 mb-6">The Skool community for Agency Automation in South Africa.</p>
             
-            <p className="text-slate-300 mb-6">Master GEO, AI Webpages, and Day-One automation pipelines. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
+            <p className="text-slate-300 mb-6">Master GEO-ready websites and practical automation. Get weekly trainings, ready-to-sell templates, client acquisition systems, and join a growing network of South African agencies building with AI.</p>
             
             <div className="flex flex-wrap gap-4">
               <a href="https://www.skool.com/ai-mzansi-7283" target="_blank" rel="noopener noreferrer" className="kc-btn-primary inline-flex items-center gap-2">
                 Join Ai Mzansi on Skool <ArrowRight size={18} />
               </a>
-              <a href="#packages" className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 font-medium text-white hover:bg-white hover:text-[var(--kc-navy)] transition-colors">
+              <a href="#offers" className="inline-flex items-center justify-center rounded-full border border-white px-6 py-3 font-medium text-white hover:bg-white hover:text-[var(--kc-navy)] transition-colors">
                 See service packages
               </a>
             </div>
@@ -238,7 +238,7 @@ export default function KhemoConnect2026() {
               <div>
                 <div className="flex items-center gap-3 mb-3">
                   <div className="text-[var(--kc-orange)]"><Bot /></div>
-                  <h3 className="font-semibold text-2xl">Day-One AI Automation Pipeline Demo</h3>
+                  <h3 className="font-semibold text-2xl">See an Automation Workflow in Action</h3>
                 </div>
                 <p className="text-[var(--kc-slate)]">Simulate a lead coming through a KhemoConnect site or app. See classification, proposal generation, and the WhatsApp notification your team receives, all from day one.</p>
               </div>
@@ -246,104 +246,6 @@ export default function KhemoConnect2026() {
             </div>
             <AutomationPipelineDemo />
           </div>
-        </div>
-      </section>
-
-      {/* PACKAGES */}
-      <section id="packages" className="bg-white">
-        <div className="kc-container kc-section">
-        <div className="text-center mb-10">
-          <h2 className="kc-heading text-3xl md:text-4xl mb-3">Packages that deliver results fast.</h2>
-          <p className="text-[var(--kc-slate)] max-w-md mx-auto">Transparent starting prices. Custom work scoped after your free audit. All include our AI-optimized hosting.</p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-          {[
-            { 
-              name: "GEO Launch", 
-              price: "From R28,000", 
-              audience: "Startups & local SMEs", 
-              desc: "Full GEO audit, semantic + structured data overhaul, authoritative content framework + hosting foundation.", 
-              pitch: "Be the answer AI engines recommend." 
-            },
-            { 
-              name: "AI Webpages", 
-              price: "From R42,000", 
-              audience: "Scale-ups, retail & tech", 
-              desc: "Dynamic personalization engine supporting 3+ visitor segments. Adaptive hero, cases, and CTAs.", 
-              pitch: "One site. Every visitor sees the right story." 
-            },
-            { 
-              name: "Day-One Automation", 
-              price: "From R35,000", 
-              audience: "All (powerful add-on)", 
-              desc: "Lead intake → classify → background → proposal → WhatsApp/SMS ping. Integrated with your new site or existing CRM.", 
-              pitch: "Website + automated pipeline from day one." 
-            },
-            { 
-              name: "Full Stack", 
-              badge: "Recommended",
-              price: "From R85,000", 
-              audience: "Ambitious SMEs & startups", 
-              desc: "GEO + Personalization + Automation + mobile-first portal + 3 months support & optimisation on our hosting.", 
-              pitch: "Own the stack. Win in search + experience + ops." 
-            },
-          ].map((pkg, i) => (
-            <div 
-              key={i} 
-              className={`kc-card flex flex-col h-full relative transition-all duration-200 ${
-                pkg.badge 
-                  ? "border-2 border-[var(--kc-orange)] shadow-md ring-1 ring-[var(--kc-orange)]/20" 
-                  : "hover:border-slate-300"
-              }`}
-            >
-              {pkg.badge && (
-                <div className="absolute -top-3 right-4 bg-[var(--kc-orange)] text-white text-[11px] font-bold uppercase tracking-wider px-3 py-0.5 rounded-full shadow-sm">
-                  {pkg.badge}
-                </div>
-              )}
-              
-              <div className="mb-3">
-                <div className="uppercase text-[11px] tracking-widest text-[var(--kc-orange)] font-semibold mb-1">
-                  {pkg.audience}
-                </div>
-                <h3 className="text-2xl font-bold text-[var(--kc-navy)] leading-tight">
-                  {pkg.name}
-                </h3>
-              </div>
-
-              <div className="mb-4 pb-3 border-b border-slate-100 flex items-baseline justify-between">
-                <span className="text-xl font-bold text-[var(--kc-navy)]">{pkg.price}</span>
-                <span className="text-xs text-slate-400 font-medium">standard scope</span>
-              </div>
-
-              <p className="text-[var(--kc-slate)] text-sm leading-relaxed mb-4 flex-1">
-                {pkg.desc}
-              </p>
-
-              <div className="text-xs font-semibold text-[var(--kc-orange-dark)] bg-orange-50/70 border border-orange-100/80 rounded-lg p-2.5 mb-5 italic">
-                “{pkg.pitch}”
-              </div>
-
-              <a 
-                href="#cta" 
-                className={`text-sm font-semibold rounded-full py-2.5 px-4 text-center transition-all ${
-                  pkg.badge 
-                    ? "kc-btn-primary shadow-sm hover:shadow" 
-                    : "kc-btn-secondary"
-                }`}
-              >
-                Get started with {pkg.name}
-              </a>
-            </div>
-          ))}
-        </div>
-        <p className="text-center text-xs mt-6 text-[var(--kc-slate)]">Prices are starting points for standard scopes. Custom work (including Ai Mzansi training bundles) quoted after your free audit. All include our scalable AI-optimized hosting.</p>
-        <div className="text-center mt-4">
-          <a href="/packages" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--kc-orange)] hover:text-[var(--kc-orange-dark)] underline underline-offset-4">
-            Need a custom combination? Launch our Interactive Proposal & Scope Builder →
-          </a>
-        </div>
         </div>
       </section>
 
@@ -364,7 +266,7 @@ export default function KhemoConnect2026() {
                   <li>Precise, authoritative definitions and local terminology (Gauteng-specific examples)</li>
                   <li>Semantic HTML + rich structured data (Service, FAQ, Organization, LocalBusiness signals)</li>
                   <li>Clear question-answer blocks and comparison tables that synthesis engines love</li>
-                  <li>Fast, trustworthy pages on our optimized hosting (Core Web Vitals + crawlability)</li>
+                  <li>Fast, trustworthy pages on our optimised hosting (Core Web Vitals + crawlability)</li>
                 </ul>
               </div>
 
@@ -388,20 +290,17 @@ export default function KhemoConnect2026() {
       <section id="cta" className="bg-[var(--kc-orange)]">
         <div className="kc-container kc-section text-center">
         <div className="max-w-2xl mx-auto">
-          <h2 className="kc-heading text-3xl mb-4 text-white">Claim your free GEO + AI Audit today</h2>
-          <p className="text-lg text-white/90 mb-6">We'll audit your current site for AI visibility gaps, show you the exact fixes, and deliver a custom roadmap, normally R12,500. No hard sell.</p>
-          
-          <a 
-            href="https://www.khemo.co.za/contact" 
-            target="_blank"
-            className="rounded-full bg-[var(--kc-navy)] text-white px-12 py-4 text-lg inline-flex items-center gap-2"
-          >
-            Book My Free 45-Minute Audit <ArrowRight />
-          </a>
-          <div className="mt-4 text-sm text-white/90">Limited spots this month • Centurion / Johannesburg based • Serving Gauteng SMEs &amp; startups</div>
-
+          <h2 className="kc-heading text-3xl mb-4 text-white">Everything we offer, from your first website up.</h2>
+          <p className="text-lg text-white/90 mb-6">Start with a website, domain and hosting. Grow into AI search visibility, Microsoft 365 and firm operations when you are ready.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="https://www.khemo.co.za/contact" target="_blank" rel="noopener noreferrer" className="rounded-full bg-[var(--kc-navy)] text-white px-6 py-3 font-medium inline-flex items-center justify-center gap-2">
+              Get a free GEO snapshot <ArrowRight className="h-4 w-4" />
+            </a>
+            <a href="https://www.khemo.co.za/contact" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white text-white px-6 py-3 font-medium inline-flex items-center justify-center hover:bg-white hover:text-[var(--kc-navy)] transition-colors">Book a discovery session</a>
+            <a href="https://www.khemo.co.za/contact" target="_blank" rel="noopener noreferrer" className="rounded-full border border-white text-white px-6 py-3 font-medium inline-flex items-center justify-center hover:bg-white hover:text-[var(--kc-navy)] transition-colors">Get a quote</a>
+          </div>
           <div className="mt-8 text-xs text-white/90">
-            Or explore <a href="#packages" className="underline text-white">packages starting from R28k</a> or <a href="#ai-mzansi" className="underline text-white">join Ai Mzansi on Skool</a>.
+            Or explore <a href="#offers" className="underline text-white">offers from R4,550</a> or <a href="#ai-mzansi" className="underline text-white">join Ai Mzansi on Skool</a>.
           </div>
         </div>
         </div>
