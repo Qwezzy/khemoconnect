@@ -10,13 +10,13 @@ const webOffers: Offer[] = [
     name: "Landing page",
     price: "From R4,550",
     points: ["One page, up to 5 sections", "Contact form or WhatsApp button", "Mobile-friendly", "Basic SEO"],
-    note: "First year from R5,420 incl. domain and hosting",
+    note: "First year from R5,590 incl. domain and Starter hosting",
     cta: "Get a quote",
   },
   {
     name: "Domain registration (.co.za)",
     price: "R150/yr",
-    points: ["Registered through our ZADNA-accredited registrar"],
+    points: ["We register your .co.za domain and manage it for you."],
     cta: "Get a quote",
   },
   {
@@ -37,24 +37,25 @@ const growthOffers: Offer[] = [
   {
     name: "GEO Launch",
     price: "From R28,000",
-    points: ["Get found in AI search and Google"],
+    points: ["Get found in AI search and Google", "Your business set up to be cited by ChatGPT, Gemini and Google AI answers", "Schema, Google Business Profile and content fixes, with a before and after report"],
     cta: "Get a free GEO snapshot",
   },
   {
     name: "M365 / Firm Ops Estate Audit",
     price: "R18,500",
-    points: ["5 days", "For law, accounting and professional firms"],
+    points: ["5 days", "For law, accounting and professional firms", "Microsoft licences are billed by Microsoft, not by us."],
     cta: "Get a quote",
   },
   {
     name: "Discovery session",
     price: "From R4,500",
-    points: ["Tiers: R4,500 / R7,500 / R12,000", "The default first step for bigger work"],
+    points: ["R4,500 up to 10 users", "R7,500 for 11 to 25 users", "R12,000 for 26 to 50 users", "Custom above 50 users", "The default first step for bigger work"],
     cta: "Book a discovery session",
   },
   {
     name: "Firm Support retainer",
     price: "From R1,500 pm",
+    points: ["Microsoft licences billed within the managed service"],
     cta: "Get a quote",
   },
 ];
