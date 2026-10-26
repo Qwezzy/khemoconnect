@@ -134,12 +134,12 @@ export default function KhemoConnect2026() {
             <p className="mt-4 text-sm font-medium text-[var(--kc-orange)]">When buyers ask ChatGPT or Perplexity for “best boutique logistics firm in Gauteng”, your business is the synthesized answer.</p>
           </div>
 
-          {/* 2. AI Webpages */}
+          {/* 2. GEO-Ready Websites */}
           <div className="kc-card flex flex-col">
             <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--kc-orange)]/10 text-[var(--kc-orange)]">
               <Zap size={22} />
             </div>
-            <h3 className="font-semibold text-xl mb-2">AI Webpages &amp; Hyper-Personalization</h3>
+            <h3 className="font-semibold text-xl mb-2">GEO-Ready Websites and Personalised Content</h3>
             <p className="text-[var(--kc-slate)] flex-1">
               Static sites are over. Your website adapts instantly to who is looking: B2B tech visitor sees integration case studies; retail buyer sees quick-commerce and local fulfilment stories.
             </p>
