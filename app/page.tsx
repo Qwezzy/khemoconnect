@@ -4,6 +4,7 @@ import React from "react";
 import { ArrowRight, Check, Zap, Target, Bot, Server } from "lucide-react";
 import { PersonalizationDemo } from "../components/PersonalizationDemo";
 import { AutomationPipelineDemo } from "../components/AutomationPipelineDemo";
+import { OffersMoneyPlan } from "../components/OffersMoneyPlan";
 
 // KhemoConnect 2026 - Upgraded positioning landing page
 // GEO-optimized: semantic HTML, clear definitions, authoritative local examples, structured data in layout
@@ -22,6 +23,7 @@ export default function KhemoConnect2026() {
             />
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-[var(--kc-slate)] md:flex">
+            <a href="#offers" className="hover:text-[var(--kc-orange)] transition">Offers</a>
             <a href="#capabilities" className="hover:text-[var(--kc-orange)] transition">Capabilities</a>
             <a href="#demo" className="hover:text-[var(--kc-orange)] transition">See it live</a>
             <a href="#packages" className="hover:text-[var(--kc-orange)] transition">Packages</a>
@@ -114,6 +116,8 @@ export default function KhemoConnect2026() {
       </div>
 
       {/* CAPABILITIES - The 3 pillars + infra */}
+      <OffersMoneyPlan />
+
       <section id="capabilities" className="bg-white">
         <div className="kc-container kc-section">
         <div className="text-center mb-12">
